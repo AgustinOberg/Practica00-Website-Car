@@ -1,0 +1,179 @@
+:root{
+    --naranja: #CB291F;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+.todo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4,auto);
+    grid-template-areas:    
+                            'central    central     central'
+                            'articulo   articulo    articulo'
+                            'tipo       tipo        tipo'
+                            'footer     footer      footer';
+}
+
+/*-------------------------------------------------------------*/
+.imagen-total{
+    background: url(../img/bg.jpg);
+    height: 500px;
+    grid-area: central;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas:    'header'
+                            'titulo';
+}
+.imagen-total::after{
+    content:"";
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 9%, rgba(0,0,0,1) 100%); 
+}
+.header{
+    width: 100%;
+    height: 70px;
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, .5);
+    color:var(--naranja);
+    z-index: 500;
+}
+    .logo-empresa{
+        font-weight: 100;
+        cursor: pointer;
+    }
+    .header a{
+        margin: 0 30px;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s ease all;
+    }
+    .header-links a:hover{
+        color: grey;
+    }
+    .header-boton{
+        background: var(--naranja);
+        padding: 4px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.1s ease-out;
+    }
+    .header-boton:hover{
+        background: #881913;
+  
+    }
+
+
+.imagen-central{
+    width: 100%;
+    height:  200px;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding: 0 35px;
+}
+
+    .zona-texto-central{
+        font-size: 25px;
+       
+    }
+        .zona-texto-central h1{
+            text-transform: uppercase;
+            color: white;
+            font-weight: 100;
+        }
+        .zona-texto-central span{
+            color:var(--naranja)
+        }
+        .zona-texto-central h3{
+            padding:10px 0;
+            text-align: center;
+            color: var(--naranja);
+            font-weight: 100;
+        }
+.oportunidades{
+    grid-area:articulo;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 'art1  art2    art3';
+    background: black;
+    color:white;
+}
+    .art-central{
+        background-color: #131313;
+    }
+    .articulo{
+        text-align: center;
+        padding:50px 20px;
+        font-weight: 100;
+    }
+    .articulo h4{
+        margin-bottom: 8px;
+        font-size: 20px;
+        color: var(--naranja);
+    }
+
+.tipos{
+    grid-area: tipo;
+    text-align: center;
+}
+    .tipos h3{
+        padding: 50px 0;
+    }
+    .cada-tipo{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 35px;
+        align-items: center;
+        text-align: center;
+
+    }
+    .tipo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .tipo img{
+        width: 200px;
+        clip-path: circle(55px);
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+    .tipo h4{
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+.pie{
+    grid-area: footer;
+    background: black;
+    color: white;
+    font-weight: 100;
+    text-align: center;
+    
+}
+    .pie a{
+        color: var(--naranja);
+        font-weight: 100;
+        text-decoration: none;
+    }
